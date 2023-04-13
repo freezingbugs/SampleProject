@@ -9,9 +9,9 @@ import io.cucumber.junit.Cucumber;
        (
 		features=".//Features/HomePage.feature",
 		glue="stepDefinitions",
-		dryRun=true,
+		dryRun=false,
 		monochrome=true,
-		plugin= {"pretty","html:test-output"}
+		plugin= {"pretty","html:test-output1"}
 		)
 public class TestRun {		
 	

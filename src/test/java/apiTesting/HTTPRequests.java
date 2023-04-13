@@ -8,7 +8,6 @@ import static org.hamcrest.Matchers.*;
 
 import java.util.HashMap;
 
-@SuppressWarnings("unused")
 public class HTTPRequests {
 
 	@Test(priority=1)

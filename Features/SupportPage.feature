@@ -1,6 +1,6 @@
 Feature: Support Page
 
-Scenario: Home page validation
+Scenario: Support page validation
       Given  User Launch Chrome browser
       When   User opens URL "http://reqres.in"
       Then   Page Title should be "Reqres - A hosted REST-API ready to respond to your AJAX requests"

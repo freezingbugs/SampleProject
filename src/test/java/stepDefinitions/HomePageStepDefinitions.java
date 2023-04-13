@@ -7,7 +7,7 @@ import org.testng.Assert;
 import io.cucumber.java.en.*;
 import pageObjects.HomePage;
 
-public class Steps {
+public class HomePageStepDefinitions {
 
 	public WebDriver driver;
 	public HomePage home;

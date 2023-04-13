@@ -3,8 +3,6 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="pageObjects.HomePage"/>
-      <class name="pageObjects.Supportpage"/>
       <class name="apiTesting.HTTPRequests"/>
     </classes>
   </test> <!-- Test -->

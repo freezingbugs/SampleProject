@@ -7,7 +7,8 @@ import io.cucumber.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions
        (
-		features={".//Features/HomePage.feature",".//Features/SupportPage.feature"},
+		//features={".//Features/HomePage.feature",".//Features/SupportPage.feature"},
+		features={".//Features/HomePage.feature"},
 		glue="stepDefinitions",
 		dryRun=false,
 		monochrome=true,

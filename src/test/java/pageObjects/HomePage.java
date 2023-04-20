@@ -22,7 +22,7 @@ public void runTests(){
 	System.setProperty("webdriver.chrome.driver",".\\ChromeDriver\\chromedriver.exe");
 	WebDriver driver = new ChromeDriver();
 	driver.manage().window().maximize();
-	driver.get("https://reqres.in");
+	//driver.get("https://reqres.in");
 	driver.findElement(By.xpath(" //a[text()=' Single user not found ']")).click();
 	
 	String actualRequest = "/api/users/23";

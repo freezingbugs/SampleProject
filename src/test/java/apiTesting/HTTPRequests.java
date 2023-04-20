@@ -25,7 +25,7 @@ public class HTTPRequests {
 		
 		HashMap data = new HashMap();
 		data.put("name","Issac");
-		data.put("Issac","Scientist");
+		data.put("job","Scientist");
 		
 		given()
 		.contentType("application/json")

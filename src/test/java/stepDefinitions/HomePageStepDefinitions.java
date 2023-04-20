@@ -26,6 +26,12 @@ public class HomePageStepDefinitions {
 		driver.get(url);
 	}
 
+	@Then("Maximize window")
+	public void maximize_window() {
+	    // Write code here that turns the phrase above into concrete actions
+	    driver.manage().window().maximize();
+	}
+	
 	@Then("Page Title should be {string}")
 	public void page_title_should_be(String title) {
 		// Write code here that turns the phrase above into concrete actions

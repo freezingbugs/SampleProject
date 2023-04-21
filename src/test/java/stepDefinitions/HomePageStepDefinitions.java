@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -40,10 +41,15 @@ public class HomePageStepDefinitions {
 
 	@Then("Click on {string}")
 	public void click_on(String text) {
-		// Write code here that turns the phrase above into concrete actions
+		driver.findElement(By.xpath(" //a[text()=' Single user not found ']")).click();
 
 	}
+	
+//	@Then("Click on {string}")
+//	public void click_on(String text) {
+//		driver.findElement(By.xpath("//span[text()='/api/users/23']")).getText();
 
+	//}
 	@Then("Close browser")
 	public void close_browser() {
 		// Write code here that turns the phrase above into concrete actions

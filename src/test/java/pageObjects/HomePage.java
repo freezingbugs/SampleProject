@@ -22,14 +22,14 @@ public void runTests(){
 	System.setProperty("webdriver.chrome.driver",".\\ChromeDriver\\chromedriver.exe");
 	WebDriver driver = new ChromeDriver();
 	driver.manage().window().maximize();
-	//driver.get("https://reqres.in");
+	driver.get("https://reqres.in");
 	driver.findElement(By.xpath(" //a[text()=' Single user not found ']")).click();
 	
 	String actualRequest = "/api/users/23";
 	String actualResponse = "404";
 	
 	String request = driver.findElement(By.xpath("//span[text()='/api/users/23']")).getText();
-	String response = driver.findElement(By.xpath("//span[text()='404']")).getText();
+	String response = driver.findElement(By.xpath("//span[@class='response-code bad']")).getText();
 	
 	Assert.assertEquals(actualRequest, request);
 	Assert.assertEquals(actualResponse, response);

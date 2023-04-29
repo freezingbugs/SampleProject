@@ -3,12 +3,13 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="apiTesting.HTTPRequests">
+      <class name="testRunner.TestRunner">
         <methods>
-          <include name="getUsers"/>
-          <include name="createUser"/>
+          <include name="setUpClass"/>
+          <include name="runScenario" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
         </methods>
-      </class> <!-- apiTesting.HTTPRequests -->
+      </class> <!-- testRunner.TestRunner -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

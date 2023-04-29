@@ -1,4 +1,4 @@
-package dataLoad;
+package stepDefinitions;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -6,21 +6,25 @@ import java.io.FileReader;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.RowId;
-import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.List;
 import java.util.ArrayList;
-import org.testng.Assert;
+import java.util.List;
 
-public class TransformData {
+import org.testng.annotations.Test;
 
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class DataTransformation {
 	static int i;
 	static int p;
 	static int t;
 	static String row;
 
+	@Given("Read CSV Data")
 	public static List<String> readCsvData() throws Exception {
+		// Write code here that turns the phrase above into concrete actions
 		List<String> csvData = new ArrayList<String>();
 		BufferedReader csvReader = new BufferedReader(new FileReader(".\\ReadFiles\\PositionReport.csv"));
 		try {
@@ -46,7 +50,9 @@ public class TransformData {
 		return csvData;
 	}
 
+	@When("Initialize DB")
 	public static void initDb() {
+		// Write code here that turns the phrase above into concrete actions
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
@@ -55,7 +61,9 @@ public class TransformData {
 		}
 	}
 
+	@Then("Read DB Data")
 	public static List<String> readDbData() {
+		// Write code here that turns the phrase above into concrete actions
 		initDb();
 		String url = "jdbc:mysql://localhost:3306/demo";
 		String user = "root";
@@ -82,18 +90,22 @@ public class TransformData {
 
 	}
 
+	@Then("Validation CSV with DB data")
 	public static boolean AreCsvDataSameAsDb() throws Exception {
+		// Write code here that turns the phrase above into concrete actions
 		List<String> csvData = readCsvData();
 		List<String> dbData = readDbData();
 		return csvData.equals(dbData);
 	}
 
-	public static void main(String[] args) throws Exception {
+	@Then("Test Execution")
+	@Test
+	public void test_execution() throws Exception {
+		// Write code here that turns the phrase above into concrete actions
 		if (AreCsvDataSameAsDb() == true) {
 			System.out.println("CSV and DB data are same");
 		} else {
 			System.out.println("CSV and DB data are not matching");
 		}
 	}
-
 }

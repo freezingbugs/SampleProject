@@ -22,7 +22,6 @@ public class HTTPRequests {
 
 	@Test(priority = 2)
 	void getUsers() {
-
 		given()
 		.when().get("https://reqres.in/api/users/2")
 		.then().statusCode(200).log().all();
@@ -32,7 +31,7 @@ public class HTTPRequests {
 	@Test(priority = 1)
 	void createUser() {
 
-		HashMap data = new HashMap();
+		HashMap<Object,Object> data = new HashMap<Object,Object>();
 		data.put("name", "Issac");
 		data.put("job", "Scientist");
 
